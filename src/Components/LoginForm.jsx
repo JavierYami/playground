@@ -5,18 +5,14 @@ import InputComponent from "./InputComponent";
 const LoginForm = () => {
 
     const handleClick = () => {
-        alert('Clicaste pa');
     }
 
     return (
 
-        <form>
-            <h1>Log In</h1>
-            <label>Email or username</label>
-            <InputComponent placeHolder={"Example@example.com"}/>
-            <label>Password</label>
-            <InputComponent inputType={"password"}/>
-            <ButtonComponent buttonValue={"Login"} clickAction={handleClick}/>
+        <form className="flex flex-col p-10 space-y-8 space-y-10">
+            <InputComponent placeHolder={"Example@example.com"} labelValue={"Email or Username"}/>
+            <InputComponent inputType={"password"} labelValue={"Password"}/>
+            <ButtonComponent buttonValue={"Login"} clickAction={handleClick} buttonType={"submit"}/>
         </form>
 
     )

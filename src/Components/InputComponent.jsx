@@ -1,12 +1,13 @@
 
-const InputComponent = ({placeHolder, inputType}) => {
+const InputComponent = ({placeHolder, inputType, labelValue}) => {
 
 
 
 return(
-
-    <input placeholder={placeHolder} type={inputType} ></input>
-
+    <div className="flex flex-col space-y-5">
+        <label>{labelValue}</label>
+        <input placeholder={placeHolder} type={inputType} ></input>
+    </div>
 )
 
 }

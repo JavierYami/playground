@@ -1,10 +1,11 @@
 
 
-const ButtonComponent = ({clickAction, buttonValue}) => {
-
+const ButtonComponent = ({clickAction, buttonValue, buttonType}) => {
 
     return (
-        <button onClick={clickAction}>{buttonValue}</button>
+        <div className="text-center">
+            <button onClick={clickAction} type={buttonType} >{buttonValue}</button>
+        </div>
     )
 
 }

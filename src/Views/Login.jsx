@@ -4,7 +4,9 @@ const Login = () => {
 
 
     return(
-        <LoginForm/>
+        <div className="mx-auto w-3/12 border rounded-xl">
+            <LoginForm/>
+        </div>
     )
 }
 
