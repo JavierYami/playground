@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 import { validation } from "../Utils/Validation";
 
 
 const LoginForm = () => {
+
+
+    const [isDisabled, setIsDisabled] = useState(true);
 
     const [userInfo, setUserInfo] = useState({
         first_name: '',
@@ -29,14 +32,18 @@ const LoginForm = () => {
             [name] : value,
         })
 
-        setErrors(validation({...userInfo, [name]:value}));
-        console.log(errors)
+        setErrors(validation({...userInfo,[name]:value}));
+
     };
     
     const handleSubmit = (event) => {
         event.preventDefault();
     };
 
+    useEffect(()=>{
+        if(!Object.keys(errors).length>0) setIsDisabled(false);
+        else setIsDisabled(true);
+    },[errors])
 
     return (
 
@@ -45,7 +52,7 @@ const LoginForm = () => {
             <InputComponent labelValue={"Last name"} onChange={handleOnChange} name={"last_name"} value={userInfo.last_name} errorMessage={errors.last_name}/>
             <InputComponent placeHolder={"Example@example.com"} labelValue={"Email or Username"} onChange={handleOnChange} inputType={"email"} name={"email"} value={userInfo.email} errorMessage={errors.email}/>
             <InputComponent inputType={"password"} labelValue={"Password"} onChange={handleOnChange} name={"password"} value={userInfo.password} errorMessage={errors.password}/>
-            <ButtonComponent buttonValue={"Login"} buttonType={"submit"}/>
+            <ButtonComponent buttonValue={"Login"} buttonType={"submit"} disabled={isDisabled}/>
         </form>
 
     )
