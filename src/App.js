@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="bg-indigo-200">
       <Routes>
-        <Route path="/" element={<Login/>}/>
+        <Route path="/singIn" element={<Login/>}/>
       </Routes>
     </div>
   );
