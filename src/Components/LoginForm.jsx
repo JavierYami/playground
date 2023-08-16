@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 import { validation } from "../Utils/Validation";
+import { postUser } from "../Utils/postUser";
 
 
 const LoginForm = () => {
@@ -38,6 +39,17 @@ const LoginForm = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(!Object.keys(errors).length>0){
+
+            postUser(userInfo);
+            
+            setUserInfo({
+                first_name: '',
+                last_name:'',
+                email:'',
+                password:''
+            });
+        };
     };
 
     useEffect(()=>{
