@@ -5,7 +5,7 @@ import { validation } from "../Utils/Validation";
 import { postUser } from "../Utils/postUser";
 
 
-const LoginForm = () => {
+const SignInForm = () => {
 
 
     const [isDisabled, setIsDisabled] = useState(true);
@@ -70,4 +70,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm;
+export default SignInForm;

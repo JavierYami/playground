@@ -1,13 +1,13 @@
-import LoginForm from "../Components/LoginForm";
+import SignInForm from "../Components/SignInForm";
 
-const Login = () => {
+const SignIn = () => {
 
 
     return(
         <div className="mx-auto w-3/12 h-screen flex justify-center items-center">
-            <LoginForm/>
+            <SignInForm/>
         </div>
     )
 }
 
-export default Login;
+export default SignIn;
