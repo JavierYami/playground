@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import SignIn from "./Views/SignIn";
 function App() {
   return (
-    <div className="bg-indigo-200">
+    <div>
       <Routes>
         <Route path="/SignIn" element={<SignIn/>}/>
       </Routes>

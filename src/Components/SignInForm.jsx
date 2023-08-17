@@ -59,12 +59,12 @@ const SignInForm = () => {
 
     return (
 
-        <form className="flex flex-col p-10 space-y-8 space-y-10 rounded-xl h-fit shadow-xl shadow-indigo-600/30 bg-transparent w-full" onSubmit={handleSubmit}>
+        <form className="flex flex-col p-10 space-y-8 space-y-10 rounded-xl h-fit shadow-xl shadow-primary/50 bg-transparent w-3/6 h-screen align-center justify-center bg-softWhite" onSubmit={handleSubmit}>
             <InputComponent  labelValue={"First Name"} onChange={handleOnChange} name={"first_name"} value={userInfo.first_name} errorMessage={errors.first_name}/>
-            <InputComponent labelValue={"Last name"} onChange={handleOnChange} name={"last_name"} value={userInfo.last_name} errorMessage={errors.last_name}/>
+            <InputComponent labelValue={"Last Name"} onChange={handleOnChange} name={"last_name"} value={userInfo.last_name} errorMessage={errors.last_name}/>
             <InputComponent placeHolder={"Example@example.com"} labelValue={"Email or Username"} onChange={handleOnChange} inputType={"email"} name={"email"} value={userInfo.email} errorMessage={errors.email}/>
             <InputComponent inputType={"password"} labelValue={"Password"} onChange={handleOnChange} name={"password"} value={userInfo.password} errorMessage={errors.password}/>
-            <ButtonComponent buttonValue={"Login"} buttonType={"submit"} disabled={isDisabled}/>
+            <ButtonComponent buttonValue={"Sign In"} buttonType={"submit"} disabled={isDisabled}/>
         </form>
 
     )
