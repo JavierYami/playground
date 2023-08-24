@@ -9,6 +9,6 @@ export const postUser = (userInfo) => {
     toast.success(response.data.message);
   })
   .catch(error => {
-    toast.error(error.message);
+    toast.error(error.response.data)
   })
 }
