@@ -35,10 +35,13 @@ const SignInForm = () => {
 
         setErrors(validation({...userInfo,[name]:value}));
 
+        if(!Object.keys(errors).length>0) setIsDisabled(false);
+        else setIsDisabled(true);
     };
     
     const handleSubmit = (event) => {
         event.preventDefault();
+
         if(!Object.keys(errors).length>0){
 
             postUser(userInfo);
@@ -53,8 +56,7 @@ const SignInForm = () => {
     };
 
     useEffect(()=>{
-        if(!Object.keys(errors).length>0) setIsDisabled(false);
-        else setIsDisabled(true);
+        Object.keys(errors).length > 0 ? setIsDisabled(true) : setIsDisabled(false);
     },[errors])
 
     return (

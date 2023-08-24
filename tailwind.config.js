@@ -13,6 +13,7 @@ module.exports = {
         primaryBlue:'#00ADB5',
         primaryGrey:'#7F8487',
         warning:'#FF9EAA',
+        selected:'#0C356A'
       }
     },
   },

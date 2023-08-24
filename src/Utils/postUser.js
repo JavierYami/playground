@@ -1,12 +1,14 @@
 import axios from "axios"
+import { toast } from 'react-hot-toast';
+
 
 export const postUser = (userInfo) => {
     const url ='http://localhost:3001/users';
     axios.post(url, {userInfo})
   .then(response => {
-    return response.data.message;
+    toast.success(response.data.message);
   })
   .catch(error => {
-    console.log(error);
+    toast.error(error.message);
   })
 }
